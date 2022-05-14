@@ -38,11 +38,19 @@ public class Task {
 
     public void autoRacing(InputDTO inputDto, ArrayList<Car> cars, Condition condition){
         for(int i = 0; i < inputDto.getCount(); i++) {
-            for (Car car: cars){
-                if (condition.move()){
-                    car.move();
-                }
-            }
+            oneGame(cars, condition);
+        }
+    }
+
+    public void oneGame(ArrayList<Car> cars, Condition condition){
+        for (Car car: cars){
+            driveCar(car, condition);
+        }
+    }
+
+    public void driveCar(Car car, Condition condition){
+        if (condition.move()){
+            car.move();
         }
     }
 
