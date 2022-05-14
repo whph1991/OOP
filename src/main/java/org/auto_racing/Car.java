@@ -1,4 +1,4 @@
-package org.auto_racing_1;
+package org.auto_racing;
 
 public class Car {
     private int position;
@@ -8,12 +8,12 @@ public class Car {
         this.position = 0;
     }
 
-    void move()
+    public void move()
     {
         this.position += 1;
     }
 
-    int get_position()
+    public int getPosition()
     {
         return position;
     }
