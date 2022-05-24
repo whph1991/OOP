@@ -4,7 +4,7 @@ public class Condition {
     Condition() {
     }
 
-    public boolean move() {
+    public boolean canMove() {
         final int threshold = 4;
         final int rangeMax = 9;
 

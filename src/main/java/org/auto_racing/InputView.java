@@ -1,30 +1,21 @@
 package org.auto_racing;
 
+import java.util.Scanner;
+
 public class InputView {
-    private String names;
-    private int count;
 
     InputView(){
-    }
 
-    InputView(String names, int count){
-        this.names = names;
-        this.count = count;
     }
+    public InputDTO show(){
+        Scanner scanner = new Scanner(System.in);
 
-    public String getNames(){
-        return this.names;
-    }
+        System.out.println("경주할 자동차 이름을 입력하세요(이름은 쉼표(,)를 기준으로 구분.");
+        String names = scanner.next();
 
-    public void setNames(String n){
-        this.names = n;
-    }
+        System.out.println("시도할 회수는 몇 회 인가요?");
+        int count = scanner.nextInt();
 
-    public int getCount(){
-        return this.count;
-    }
-
-    public void setCount(int count) {
-        this.count = count;
+        return new InputDTO(names, count);
     }
 }
