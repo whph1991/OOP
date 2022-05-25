@@ -8,6 +8,11 @@ public class ResultView {
     ResultView(){
     }
 
+    public void printResult(RacingGame racingGame){
+        printPositions(racingGame.getCars());
+        printWinners(racingGame.rank());
+    }
+
     public void printPositions(ArrayList<Car> cars){
         for (Car car : cars) {
             System.out.println(car.getName() + " : " + String.join("", Collections.nCopies(car.getPosition(), "-")));
