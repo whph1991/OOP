@@ -2,7 +2,6 @@ package org.auto_racing;
 
 public class Car {
     private int position;
-
     private String name;
 
     Car()
