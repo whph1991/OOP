@@ -1,14 +1,14 @@
 package org.ladderGame;
 
 public class InputDto {
-    private int count;
+    private String names;
     private int height;
 
     InputDto(){
     }
 
-    InputDto(int count, int height){
-        this.count = count;
+    InputDto(String names, int height){
+        this.names = names;
         this.height = height;
     }
 
@@ -20,11 +20,11 @@ public class InputDto {
         this.height = height;
     }
 
-    public int getCount(){
-        return this.count;
+    public String getNames(){
+        return this.names;
     }
 
-    public void setCount(int count) {
-        this.count = count;
+    public void setNames(String names) {
+        this.names = names;
     }
 }
