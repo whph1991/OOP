@@ -1,45 +1,31 @@
 package org.ladderGame;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 public class Ladder {
-    private final int RANGE = 9;
-    private final int TRHESHOLD = 4;
-    private int count;
+
+    private List<String> names;
     private int height;
-    private StringBuilder result;
+
+    private ArrayList<Line> lines = new ArrayList<>();
 
     Ladder(InputDto inputDto){
-        this.count = inputDto.getCount();
+        this.names = Arrays.asList(inputDto.getNames().split(","));
         this.height = inputDto.getHeight();
-        this.result = new StringBuilder(repeat("| ", this.count * this.height));
     }
 
     public void makeLadders(){
-        int maxIndex = this.count * this.height * 2;
+        int countOfPerson = this.names.size();
 
-        for(int index = 1; index < maxIndex; index += 2){
-            insertLadder(index);
-            insertNewLine(index);
+        for(int row = 0; row < height; row++){
+            lines.add(new Line(countOfPerson));
         }
     }
 
-    public StringBuilder getResult(){
-        return result;
-    }
-
-    public void insertLadder(int index){
-        if (this.TRHESHOLD <= (int)(Math.random() * this.RANGE)){
-            this.result.setCharAt(index, '-');
-        }
-    }
-
-    public void insertNewLine(int index){
-        if ((index + 1) % (this.count * 2) == 0) {
-            this.result.setCharAt(index, '\n');
-        }
-    }
-
-    public String repeat(String str, int repeat){
-        return new String(new char[repeat]).replace("\0", str);
-    }
+    public int getHeight(){return this.height;}
+    public List<String> getNames(){return this.names;}
+    public ArrayList<Line> getLines(){return this.lines;}
 }
 
