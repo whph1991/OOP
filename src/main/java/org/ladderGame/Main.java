@@ -10,5 +10,8 @@ public class Main {
 
         ResultView resultView = new ResultView();
         resultView.printResult(ladder);
+
+        InputDto requestDto = inputView.request();
+        resultView.printRequest(ladder, requestDto);
     }
 }
