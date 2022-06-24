@@ -16,6 +16,7 @@ public class Ladder {
         this.names = Arrays.asList(inputDto.getNames().split(","));
         this.outputs = Arrays.asList(inputDto.getOutputs().split(","));
         this.height = inputDto.getHeight();
+
     }
 
     public void makeLadders(){
