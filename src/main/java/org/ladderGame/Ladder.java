@@ -27,6 +27,30 @@ public class Ladder {
         }
     }
 
+    public String playGame(int position){
+        int startPosition = position;
+
+        for (int row = 0; row < this.height; row++){
+            position = move(position, this.lines.get(row).getPoints());
+        }
+
+        return this.names.get(startPosition) + ":" + this.outputs.get(position);
+    }
+
+    public int move(int position, ArrayList<Boolean> points){
+        // move left
+        if (position > 0 && points.get(position-1)){
+            return position - 1;
+        }
+
+        // move right
+        if (points.size() > position && points.get(position)){
+            return position + 1;
+        }
+
+        return position;
+    }
+
     public int getHeight(){return this.height;}
     public List<String> getNames(){return this.names;}
     public ArrayList<Line> getLines(){return this.lines;}

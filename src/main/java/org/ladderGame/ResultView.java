@@ -67,40 +67,14 @@ public class ResultView {
             return;
         }
 
-        playGame(ladder, position);
-    }
-
-    public void playGame(Ladder ladder, int position){
-        ArrayList<Line> lines = ladder.getLines();
-        int height = ladder.getHeight();
-        String name = ladder.getNames().get(position);
-
-        for (int row = 0; row < height; row++){
-            position = move(position, lines.get(row).getPoints());
-        }
-
-        System.out.println(name + ":" + ladder.getOutputs().get(position));
-    }
-
-    public int move(int position, ArrayList<Boolean> points){
-        // move left
-        if (position > 0 && points.get(position-1)){
-            return position - 1;
-        }
-
-        // move right
-        if (points.size() > position && points.get(position)){
-            return position + 1;
-        }
-
-        return position;
+        System.out.println(ladder.playGame(position));
     }
 
     public void playAllGame(Ladder ladder){
         int countOfPerson = ladder.getNames().size();
 
         for (int position = 0; position < countOfPerson; position++){
-            playGame(ladder, position);
+            System.out.println(ladder.playGame(position));
         }
     }
 }
