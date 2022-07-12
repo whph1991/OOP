@@ -1,4 +1,4 @@
-package org.ladderGame;
+package org.laddergame.utils;
 
 import java.util.ArrayList;
 

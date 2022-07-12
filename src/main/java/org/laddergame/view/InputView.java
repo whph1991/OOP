@@ -1,13 +1,15 @@
-package org.ladderGame;
+package org.laddergame.view;
+
+import org.laddergame.utils.UserVO;
 
 import java.util.Scanner;
 
 public class InputView {
 
-    InputView(){
+    public InputView(){
 
     }
-    public InputDto show(){
+    public static UserVO show(){
         Scanner scanner = new Scanner(System.in);
 
         System.out.println("참여할 사람 이름을 입력하세요. (결과는 쉼표(,)로 구분하세요)");
@@ -19,15 +21,15 @@ public class InputView {
         System.out.println("최대 사다리 높이는 몇 개인가요?");
         int height = scanner.nextInt();
 
-        return new InputDto(names, returns, height);
+        return new UserVO(names, returns, height);
     }
 
-    public InputDto request(){
+    public static String request(){
         Scanner scanner = new Scanner(System.in);
 
         System.out.println("참여할 사람 이름을 입력하세요.");
         String names = scanner.next();
 
-        return new InputDto(names);
+        return names;
     }
 }
