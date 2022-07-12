@@ -1,4 +1,4 @@
-package org.ladderGame;
+package org.laddergame.utils;
 
 import java.util.ArrayList;
 
@@ -9,7 +9,7 @@ public class Line {
 
     public Line(int countOfPerson){
         // 라인의 좌표 값에 선이 있는지 유무를 판단하는 로직 추가
-        for(int column = 0; column < countOfPerson; column++){
+        for(int column = 1; column < countOfPerson; column++){
             addColumn();
         }
     }
@@ -25,15 +25,5 @@ public class Line {
         this.points.add(value);
     }
 
-    public void printLine(){
-        for (Boolean point: this.points){
-            System.out.print(checkLine(point) + "|");
-        }
-
-        System.out.println();
-    }
-
-    public String checkLine(Boolean point){
-        return point ? "-----" : "     ";
-    }
+    public ArrayList<Boolean> getPoints(){return this.points;}
 }
